@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   end
 
   resources :garages
-
   root :to => 'welcome#show'
-
+  resources :events
 end

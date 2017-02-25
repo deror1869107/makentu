@@ -1,5 +1,3 @@
-<%= @garage.name %>
-
 <table class="table table-hover">
   <thead>
     <tr>
@@ -7,6 +5,8 @@
       <th>品牌</th>
       <th>型號</th>
       <th>Error Code</th>
+      <th>時間</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -16,6 +16,8 @@
     <td><%= c.brand %></td>
     <td><%= c.car_model %></td>
     <td><%= c.error_code %></td>
+    <td><%= c.created_at %></td>
+    <td><%= button_to "完成", event_path(c), :method => :delete, :class => "btn btn-primary" %></td>
   </tr>
 <% end %>
 </table>
