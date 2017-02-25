@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225054423) do
+ActiveRecord::Schema.define(version: 20170225061231) do
+
+  create_table "events", force: :cascade do |t|
+    t.string   "license_plate"
+    t.string   "brand"
+    t.string   "car_model"
+    t.float    "lat"
+    t.float    "lng"
+    t.string   "url"
+    t.string   "error_code"
+    t.boolean  "accept"
+    t.string   "account"
+    t.integer  "garage_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.index ["garage_id"], name: "index_events_on_garage_id"
+  end
 
   create_table "garages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.integer  "lat"
+    t.integer  "lng"
+    t.integer  "event_max"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

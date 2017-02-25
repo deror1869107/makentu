@@ -1,0 +1,21 @@
+<%= @garage.name %>
+
+<table>
+  <thead>
+    <tr>
+      <th>車牌</th>
+      <th>品牌</th>
+      <th>型號</th>
+      <th>Error Code</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @events.each do |c| %>
+  <tr>
+    <td><%= c.license_plate %></td>
+    <td><%= c.brand %></td>
+    <td><%= c.car_model %></td>
+    <td><%= c.error_code %></td>
+  </tr>
+<% end %>
+</table>
