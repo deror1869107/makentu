@@ -3,6 +3,7 @@ class ApiV1::EventsController < ApiController
   def create
     @event = Event.create(event_params)
     @event.save
+    render json:  @event.garage.name
   end
 
   protected

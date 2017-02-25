@@ -31,8 +31,8 @@ ActiveRecord::Schema.define(version: 20170225061231) do
   create_table "garages", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
-    t.integer  "lat"
-    t.integer  "lng"
+    t.float    "lat"
+    t.float    "lng"
     t.integer  "event_max"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

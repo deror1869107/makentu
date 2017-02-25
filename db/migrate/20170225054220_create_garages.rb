@@ -3,8 +3,8 @@ class CreateGarages < ActiveRecord::Migration[5.0]
     create_table :garages do |t|
       t.string :name
       t.string :address
-      t.integer :lat
-      t.integer :lng
+      t.float :lat
+      t.float :lng
       t.integer :event_max
       t.timestamps
     end
