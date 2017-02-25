@@ -3,6 +3,7 @@ class Event < ApplicationRecord
   before_validation :find_garage
   before_save :make_url 
   validates_presence_of :lat, :lng, :error_code, :license_plate, :brand, :car_model, :account
+  after_create :broadcast
 
   protected
 
@@ -16,5 +17,13 @@ class Event < ApplicationRecord
 
   def make_url
     self.url = Faker::Lorem.characters(10)
+  end
+
+  def broadcast
+    ActionCable.server.broadcast "newevent_#{self.garage_id}", self.render_event
+  end
+
+  def render_event
+    ApplicationController.renderer.render(partial: 'garages/event', locals: {c: self})
   end
 end

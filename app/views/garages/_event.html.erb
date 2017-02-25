@@ -1,0 +1,9 @@
+<tr>
+  <td><%= c.id %></td>
+  <td><%= c.license_plate %></td>
+  <td><%= c.brand %></td>
+  <td><%= c.car_model %></td>
+  <td><%= c.error_code %></td>
+  <td><%= c.created_at %></td>
+  <td><%= button_to "完成", event_path(c), :method => :delete, :class => "btn btn-primary", :remote => true %></td>
+</tr>

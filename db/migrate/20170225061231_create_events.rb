@@ -11,6 +11,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.boolean :accept
       t.string :account
       t.references :garage
+      t.boolean :read
       t.timestamps
     end
   end
