@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right">
             <% if current_user %>
-              <li><%= link_to current_user.garage.name %></li>
+              <li><%= link_to current_user.garage.name, garage_path(current_user.garage) %></li>
               <li><%= link_to "logout", destroy_user_session_path, :method => :delete %></li>
             <% else %>
               <li><%= link_to "login", new_user_session_path %></li>
@@ -35,11 +35,11 @@
       </div><!-- /.container-fluid -->
     </nav>
     <% if current_page?('/') %>
+      <%= yield %>
+    <% else %>
       <div class="container">
         <%= yield %>
       </div>
-    <% else %>
-      <%= yield %>
     <% end %>
   </body>
 </html>
