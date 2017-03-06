@@ -9,6 +9,6 @@ class ApiV1::EventsController < ApiController
   protected
 
   def event_params
-    params.require(:event).permit(:license_plate, :lat, :lng, :error_code, :brand, :car_model, :account)
+    params.require(:event).permit(:license_plate, :lat, :lng, :error_code, :brand, :car_model)
   end
 end

@@ -2,7 +2,7 @@ class Event < ApplicationRecord
   belongs_to :garage
   before_validation :find_garage
   before_save :make_url 
-  validates_presence_of :lat, :lng, :error_code, :license_plate, :brand, :car_model, :account
+  validates_presence_of :lat, :lng, :error_code, :license_plate, :brand, :car_model
   after_create :broadcast
 
   protected
